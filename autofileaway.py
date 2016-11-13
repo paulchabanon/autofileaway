@@ -53,6 +53,9 @@ with open(rootDir+'/autofileaway.rules.csv', 'rb') as csvfile:
 					log.write(logDate()+dstFull+'\n\n')
 					continue
 				
+				if not os.path.exists(dstFolder):	
+					os.mkdir(dstFolder)
+				
 				shutil.move(srcFull, dstFull)
 				log.write(logDate()+srcFull+'\n')
 				log.write(logDate()+dstFull+'\n\n')
